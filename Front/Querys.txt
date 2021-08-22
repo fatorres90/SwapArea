@@ -1,0 +1,22 @@
+USE `practicapro`;
+DROP TABLE IF EXISTS `usuarios`;
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `id` int(8) NOT NULL AUTO_INCREMENT,
+  `Nombre` varchar(30) NOT NULL,
+`Apellido` varchar(30) NOT NULL,
+`NombreUsuario` varchar(30) NOT NULL,
+`Contraseña` varchar(30) NOT NULL,
+`Calificacion` int(8),
+ `Mail` varchar(60) NOT NULL,
+`Edad` int(10) NOT NULL,
+`Dni` int(10) NOT NULL,
+`Telefono` int(10) NOT NULL,
+`id_Articulo` int(10) ,
+`id_Monedo` int(10) ,
+`id_Tx` int(10) ,
+`id_Domicilio` int(10) ,
+
+  PRIMARY KEY (`id`))
+  
+ ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+
