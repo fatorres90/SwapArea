@@ -52,7 +52,8 @@ if (isset($_POST['login'])) {
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="index.php" style="font-family: 'Lobster', cursive;">devHuayra</a>
+			<a class="navbar-brand" href="index.php" style="font-family: 'Lobster', cursive;"></a>
+			<img src="logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
 		</div>
 		<!-- menu items -->
 		<div class="collapse navbar-collapse" id="navbar1">

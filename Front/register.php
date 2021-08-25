@@ -22,11 +22,20 @@ if (isset($_POST['signup'])) {
 	$cpassword = mysqli_real_escape_string($con, $_POST['cpassword']);
 	$terminosycond = mysqli_real_escape_string($con, $_POST['terminosycond']);
 	$telefono = mysqli_real_escape_string($con, $_POST['telefono']);
+
 	
 	//Nombre sólo puede contener caracteres alfabéticos y espacio (esto varia sgun requerimiento)
 	if (!preg_match("/^[a-zA-Z ]+$/",$nombre)) {
 		$error = true;
 		$name_error = "El nombre debe contener solo caracteres del alfabeto y espacio.";
+	}
+	if (!preg_match("/^[a-zA-Z ]+$/",$apellido)) {
+		$error = true;
+		$last_name_error = "El apellido debe contener solo caracteres del alfabeto y espacio.";
+	}
+	if (!preg_match("/^[a-zA-Z ]+$/",$nombreusuario)) {
+		$error = true;
+		$user_name_error = "El nombre de usuario debe contener solo caracteres del alfabeto y espacio.";
 	}
 	if(!filter_var($mail,FILTER_VALIDATE_EMAIL)) {
 		$error = true;
@@ -40,12 +49,13 @@ if (isset($_POST['signup'])) {
 		$error = true;
 		$cpassword_error = "Las contraseñas no coinciden";
 	}
+
 	if(!$terminosycond) {
 		//$error = true;
 		//$terminosycond_error = "Debes aceptar Terminos y condiciones";
 	}
 	if (!$error) {
-		if(mysqli_query($con, "INSERT INTO usuarios (name,email,password) VALUES('" . $name . "', '" . $email . "', '" . md5($password) . "')")) {
+		if(mysqli_query($con, "INSERT INTO usuarios (Nombre,Apellido,DNI,Edad,Mail,NombreUsuario,Telefono,Contraseña) VALUES('" . $nombre . "','" . $apellido . "','" . $dni . "','" . $edad . "', '" . $mail . "','" . $nombreusuario . "','" . $telefono . "', '" . md5($password) . "')")) {
 			//$successmsg = "¡Registrado exitosamente! <a href='login.php'>Click here to Login</a>";
 			$successmsg = '
 			  <div class="alert alert-success alert-dismissable fade in">
@@ -97,7 +107,11 @@ if (isset($_POST['signup'])) {
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="index.php" style="font-family: 'Lobster', cursive;">devHuayra</a>
+			<a class="navbar-brand" href="index.php" style="font-family: 'Lobster', cursive;" >  
+				 
+				 <img src="logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+
+			</a>
 		</div>
 		<!-- menu items -->
 		<div class="collapse navbar-collapse" id="navbar1">
@@ -118,38 +132,44 @@ if (isset($_POST['signup'])) {
 
 					<div class="form-group">
 						<label for="name">Nombre</label>
-						<input type="text" name="name" placeholder="Nombres" required value="<?php if($error) echo $nombre; ?>" class="form-control" />
+						<input type="text" name="nombre" placeholder="Nombres" required value="<?php if($error) echo $nombre; ?>" class="form-control" />
 						<span class="text-danger"><?php if (isset($name_error)) echo $name_error; ?></span>
 					</div>
 
 					<div class="form-group">
 						<label for="name">Apellido</label>
-						<input type="text" name="name" placeholder="Apellidos" required value="<?php if($error) echo $apellido; ?>" class="form-control" />
-						<span class="text-danger"><?php if (isset($name_error)) echo $name_error; ?></span>
+						<input type="text" name="apellido" placeholder="Apellidos" required value="<?php if($error) echo $apellido; ?>" class="form-control" />
+						<span class="text-danger"><?php if (isset($last_name_error)) echo $last_name_error; ?></span>
 					</div>
 
 					<div class="form-group">
 						<label for="name">Nombre usuario</label>
-						<input type="text" name="name" placeholder="Nombre usuario" required value="<?php if($error) echo $nombreusuario; ?>" class="form-control" />
-						<span class="text-danger"><?php if (isset($name_error)) echo $name_error; ?></span>
+						<input type="text" name="nombreusuario" placeholder="Nombre Usuario" required value="<?php if($error) echo $nombreusuario; ?>" class="form-control" />
+						<span class="text-danger"><?php if (isset($user_name_error)) echo $user_name_error; ?></span>
 					</div>
 					
 					<div class="form-group">
 						<label for="name">Email</label>
-						<input type="email" name="email" placeholder="Correo Electrónico" required value="<?php if($error) echo $email; ?>" class="form-control" />
+						<input type="email" name="mail" placeholder="Correo Electrónico" required value="<?php if($error) echo $mail; ?>" class="form-control" />
 						<span class="text-danger"><?php if (isset($email_error)) echo $email_error; ?></span>
 					</div>
 
 					<div class="form-group">
 						<label for="name">Edad</label>
-						<input type="text" name="name" placeholder="Nombre usuario" required value="<?php if($error) echo $nombreusuario; ?>" class="form-control" />
-						<span class="text-danger"><?php if (isset($name_error)) echo $name_error; ?></span>
+						<input type="text" name="edad" placeholder="Nombre usuario" required value="<?php if($error) echo $edad; ?>" class="form-control" />
+						<span class="text-danger"><?php if (isset($age_error)) echo $age_error; ?></span>
 					</div>
 
 					<div class="form-group">
 						<label for="name">DNI</label>
-						<input type="text" name="name" placeholder="Nombre usuario" required value="<?php if($error) echo $nombreusuario; ?>" class="form-control" />
-						<span class="text-danger"><?php if (isset($name_error)) echo $name_error; ?></span>
+						<input type="text" name="dni" placeholder="DNI" required value="<?php if($error) echo $dni; ?>" class="form-control" />
+						<span class="text-danger"><?php if (isset($dni_error)) echo $dni_error; ?></span>
+					</div>
+
+					<div class="form-group">
+						<label for="name">Telefono</label>
+						<input type="text" name="telefono" placeholder="telefono" required value="<?php if($error) echo $telefono; ?>" class="form-control" />
+						<span class="text-danger"><?php if (isset($dni_error)) echo $dni_error; ?></span>
 					</div>
 
 					<div class="form-group">

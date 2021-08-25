@@ -23,7 +23,8 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="index.php" style="font-family: 'Lobster', cursive;">devHuayra</a>
+			<a class="navbar-brand" href="index.php" style="font-family: 'Lobster', cursive;">
+			<img src="logo.jpg" width="30" height="30" class="d-inline-block align-top" alt=""></a>
 		</div>
 		<div class="collapse navbar-collapse" id="navbar1">
 			<ul class="nav navbar-nav navbar-right">
