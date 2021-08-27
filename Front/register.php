@@ -229,16 +229,16 @@ if (isset($_POST['signup'])) {
         </h4>
       </div>
       <div class="modal-body">
-        Mediante la simple utilización de devhuayra.com y al contratar cualquiera de los servicios ofrecidos a través de devhuayra.com, el Cliente reconoce haber leído y acepta los términos expuestos en el presente Acuerdo y / o las políticas que formen parte del mismo.
+        Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! 
         <br>
         <br>
         <p>
-        	<b>Uso de la cuenta de usuario en devHuayra.com</b>
+        	<b>Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! </b>
         </p>
 		<p>
 			<ul>
-				<li>El usuario de Registros.com se compromete a proporcionar mediante su registro datos veraces, exactos y completos sobre su identidad. También se compromete a revisar periódicamente la información proporcionada y garantiza la validez y la vigencia de los datos asociados tanto a su cuenta de usuario como a los productos y servicios contratados. El incumplimiento de esta condición podrá motivar la cancelación de la cuenta y la denegación al usuario el acceso a los servicios de Registros.com de forma temporal o permanente.</li>
-				<li>Registros.com se reserva el derecho de solicitar la verificación y / o actualización de la información proporcionada por el Cliente, quien deberá responder satisfactoriamente a la petición de Registros.com en el plazo máximo de 5 días laborables. El Cliente entiende y acepta que el no cumplimiento de este requisito constituye una vulneración del presente Acuerdo y puede dar lugar a la cancelación de los productos y/o servicios cont...</li>
+				<li>Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! </li>
+				<li>Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! Terminos y condiciones! </li>
 				<br>
 				<a href="#" class="btn btn-default btn-xs">
 					<span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> Descargar PDF
