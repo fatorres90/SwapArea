@@ -12,7 +12,7 @@ if (isset($_POST['login'])) {
 
 	$email = mysqli_real_escape_string($con, $_POST['email']);
 	$password = mysqli_real_escape_string($con, $_POST['password']);
-	$result = mysqli_query($con, "SELECT * FROM users WHERE email = '" . $email. "' and password = '" . md5($password) . "'");
+	$result = mysqli_query($con, "SELECT * FROM usuarios WHERE Mail = '" . $email. "' and contraseña = '" . md5($password) . "'");
 
 	if ($row = mysqli_fetch_array($result)) {
 		//$_SESSION['usr_estado'] = $row['estado'];
@@ -60,6 +60,7 @@ if (isset($_POST['login'])) {
 			<ul class="nav navbar-nav navbar-right">
 				<li class="active"><a href="login.php">Login</a></li>
 				<li><a href="register.php">Registro</a></li>
+
 			</ul>
 		</div>
 	</div>
@@ -89,6 +90,7 @@ if (isset($_POST['login'])) {
 						<input type="submit" name="login" value="Iniciar Sesion" class="btn btn-primary" />
 						<input type="reset" value="Limpiar" class="btn btn-default" >
 					</div>
+					<a href="forgotPassword.php">Olvidaste tu contraseña</a>
 				</fieldset>
 			</form>
 			<span class="text-danger"><?php if (isset($errormsg)) { echo $errormsg; } ?></span>
