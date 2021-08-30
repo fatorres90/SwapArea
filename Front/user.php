@@ -7,7 +7,7 @@ class User{
     private $dbName     = "practicapro";
     private $userTbl    = "usuarios";
     
-    public function __construct(){
+     public function __construct(){
         if(!isset($this->db)){
             // Connect to the database
             $conn = new mysqli($this->dbHost, $this->dbUsername, $this->dbPassword, $this->dbName);
