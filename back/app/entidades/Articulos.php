@@ -1,10 +1,13 @@
 <?php
 class Articulos {
     public $idArticulo;
-    public $nombreArticulo;
-    public $Descripcion;
     public $idUsuario;
+    public $Nombre;
+    public $Descripcion;
     public $foto;
+    public $Valor;
+    public $Calificacion;
+    public $Clasificacion;
 
 
     
@@ -13,7 +16,7 @@ public function CrearArticulo($art)
 
 
     $objAccesoDatos = AccesoDatos::obtenerInstancia();
-    $consulta = $objAccesoDatos->prepararConsulta("INSERT INTO `Articulos`(`nombreArticulo`, `Descripcion`, `idUsuario`, `foto`) VALUES ('$art->nombreArticulo', '$art->Descripcion', '$art->idUsuario', '$art->foto')");
+    $consulta = $objAccesoDatos->prepararConsulta("INSERT INTO `Articulo` (`idArticulo`,`idUsuario`,`Nombre`,`Descripcion`,`foto`,`Valor`,`Clasificacion`) values ($art->idArticulo, $art->idUsuario, '$art->Nombre', '$art->Descripcion','$art->foto','$art->Valor','$art->Clasificacion')");
     
    
     $consulta->execute();
