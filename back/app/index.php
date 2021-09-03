@@ -48,7 +48,7 @@ $app->add(function (Request $request, RequestHandlerInterface $handler): Respons
 //$app->get('[/]', \usuariosController::class . ':Listar' );
 //$app->get('/Usuarios[/]', \usuariosController::class . ':Listar' );
 $app->group('/Usuarios', function (RouteCollectorProxy $group) {
-    $group->post('/Login', \usuariosController::class . ':Login' );
+    $group->get('/Login/{nombreUsuario}/{pass}[/]', \usuariosController::class . ':Login' );
     $group->post('/Alta', \usuariosController::class . ':Alta' );
     $group->post('/Baja', \usuariosController::class . ':Baja' );
     $group->post('/Modificacion', \usuariosController::class . ':Modificacion' );

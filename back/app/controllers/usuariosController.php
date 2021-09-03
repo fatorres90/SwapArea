@@ -13,7 +13,7 @@ public function Alta($request, $response, $args){
     $usr->Nombre =  $listaDeParametros['Nombre'];
     $usr->Apellido =  $listaDeParametros['Apellido'];
     $usr->NombreUsuario =  $listaDeParametros['NombreUsuario'];
-    $usr->Contraseña =  $listaDeParametros['Contraseña'];
+    $usr->Contraseña =  password_hash($listaDeParametros['Contraseña'], PASSWORD_BCRYPT);
     $usr->Mail =  $listaDeParametros['Mail'];
     $usr->Edad =  $listaDeParametros['Edad'];
     $usr->dni =  $listaDeParametros['dni'];
@@ -43,13 +43,13 @@ public function Modificacion($request, $response, $args){
     $listaDeParametros = $request->getParsedBody();
     $usr->idUsuario =  $listaDeParametros['idUsuario'];
     $usr->nombreUsuario =  $listaDeParametros['NUsuario'];
-    $usr->pass =  $listaDeParametros['pass'];
+    $usr->Contraseña =   password_hash($listaDeParametros['pass'], PASSWORD_DEFAULT);
     $usr->nombre =  $listaDeParametros['Nombre'];
     $usr->papellido =  $listaDeParametros['Apellido'];
     $usr->edad =  $listaDeParametros['Edad'];
     $usr->Descripcion =  $listaDeParametros['Descripcion'];
     $usr->UpdateUsuario($usr);
-    $response->getBody()->Write("Creado");
+    $response->getBody()->Write("Modificado");
     
 
     return $response;
@@ -68,20 +68,31 @@ public function Login($request, $response, $args){
      
     $usr=  new Usuarios();
 
-    $listaDeParametros = $request->getParsedBody();
-    $usr->nombreUsuario =  $listaDeParametros['NUsuario'];
-    $usr->pass =  $listaDeParametros['pass'];
-
-    $id = $usr->Login($usr);
-     
-    
-    $response->getBody()->Write($id);
+    //$listaDeParametros = $request->getParsedBody();
+    $usr->nombreUsuario = $args['nombreUsuario'];
+    $usr->Contraseña =  $args['pass'];
+        
+    $Contraseñahash = $usr->ObetenerPass($usr);
     
 
-    return $response;
-     //$response ->getBody()->Write(json_encode($usuario));
-           //$response->getBody()->Write("OK");
-    // return $response->withHeader('Content-Type', 'application/json');
+    if(password_verify($args['pass'], $Contraseñahash))
+    {
+        $usr->Contraseña = "";
+        $LisatU = $usr->Login($usr);  
+        //$response->getBody()->Write($id);
+        $response ->getBody()->Write(json_encode($LisatU));
+        
+    }
+    else
+    {
+
+        $usr->idUsuario = "0";
+        $response ->getBody()->Write(json_encode( $usr));
+
+    }
+    
+
+    return $response->withHeader('Content-Type', 'application/json');
 
 
     

@@ -68,11 +68,11 @@ public function EliminarUsuario($usr)
     return $consulta->fetchAll(PDO::FETCH_CLASS, 'Usuarios');
 }
 
-public function Login($usr)
+public function ObetenerPass($usr)
 {
 
     $objAccesoDatos = AccesoDatos::obtenerInstancia();
-    $consulta = $objAccesoDatos->prepararConsulta("SELECT `idUsuario`  FROM `usuarios` WHERE `nombreUsuario` = '$usr->nombreUsuario' AND `pass` = '$usr->pass' ");
+    $consulta = $objAccesoDatos->prepararConsulta("SELECT `Contraseña` FROM `usuarios` WHERE `nombreUsuario` = '$usr->nombreUsuario' ");
     
     // $this->autor;
     $consulta->execute();
@@ -83,12 +83,33 @@ public function Login($usr)
 
        $usu = $consulta->fetchAll(PDO::FETCH_CLASS, 'Usuarios');
 
-    return strval($usu[0]->idUsuario);
+       return strval($usu[0]->Contraseña);
     }
     else
     {
 
     return "0";
+    }
+    
+}
+
+public function Login($usr)
+{
+
+    $objAccesoDatos = AccesoDatos::obtenerInstancia();
+    $consulta = $objAccesoDatos->prepararConsulta("SELECT `idUsuario` FROM `usuarios` WHERE `nombreUsuario` = '$usr->nombreUsuario' ");  
+    // $this->autor;idUsuario
+    $consulta->execute();
+    $filas = $consulta->rowCount();     
+    if($filas>0)
+    {
+       return $consulta->fetchAll(PDO::FETCH_CLASS, 'Usuarios');
+       //return strval($usu[0]->Contraseña);
+       
+    }
+    else
+    {
+       return "0";
     }
     
 }

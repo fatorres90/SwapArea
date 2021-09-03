@@ -10,13 +10,16 @@ public function Alta($request, $response, $args){
 
 
     $listaDeParametros = $request->getParsedBody();
-    $Art->nombreArticulo =  $listaDeParametros['nombreArticulo'];
-    $Art->Descripcion =  $listaDeParametros['Descripcion'];
+    $Art->idArticulo =  $listaDeParametros['idArticulo'];
     $Art->idUsuario =  $listaDeParametros['idUsuario'];
+    $Art->Nombre =  $listaDeParametros['Nombre'];
+    $Art->Descripcion =  $listaDeParametros['Descripcion'];
     $Art->foto =  $listaDeParametros['foto'];
+    $Art->Valor =  $listaDeParametros['Valor'];
+    $Art->Clasificacion =  $listaDeParametros['Clasificacion'];
     $Art->CrearArticulo($Art);
     $response->getBody()->Write("Creado");
-    
+
     return $response ;
 }
 
