@@ -33,7 +33,7 @@ if (!isset($_POST["guardar"])) {
 
     }
 
-    $id=$_POST['articulos-id'];
+   $id=$_POST['articulos-id'];
    $nombre=$_POST['nombre'];
    $valor=$_POST['valor'];
    $calificacion=$_POST['calificacion'];

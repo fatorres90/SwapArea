@@ -7,39 +7,39 @@ $articulos = miQuery("SELECT * FROM articulos");
 <?php 
 
 //open connection to mysql db
-$connection = mysqli_connect("127.0.0.1","root","","primerparcial") or die("Error " . mysqli_error($connection));
+$connection = mysqli_connect("127.0.0.1","root","","practicapro") or die("Error " . mysqli_error($connection));
 
 $sql = "select * from articulos";
     $result = mysqli_query($connection, $sql) or die("Error in Selecting " . mysqli_error($connection));
 
 
 
-    $emparray = array();
-    while($row =mysqli_fetch_assoc($result))
-    {
+
+
+    
+   // $json_string = json_encode($articulos);
+    //$file = 'articulos.json';
+    //file_put_contents($file, $json_string);
+
+    
+   $emparray = array();
+      while($row =mysqli_fetch_assoc($result))
+      {
       
 
-       $id=$_POST['articulos-id'];
-       $nombre=$_POST['nombre'];
-       $valor=$_POST['valor'];
-       $calificacion=$_POST['calificacion'];
-       $clasificacion=$_POST['clasificacion'];
-       $foto=$_POST['foto'];
-       $descripcion=$_POST['descripcion'];
+         $id=$row['id'];
+         $nombre=$row['nombre'];
+         $valor=$row['valor'];
+         $calificacion=$row['calificacion'];
+         $clasificacion=$row['clasificacion'];
+         $foto=$row['foto'];
+         $descripcion=$row['descripcion'];
    
 
-      $articulos[] = array('id'=> $id, 'nombre'=> $nombre,  'valor'=> $valor, 'calificacion'=> $calificacion,
+         $articulos[] = array('id'=> $id, 'nombre'=> $nombre,  'valor'=> $valor, 'calificacion'=> $calificacion,
                         'descripcion'=> $descripcion, 'clasificacion'=> $clasificacion, 'foto'=> $foto);
 
-    }
-
-    
-    $json_string = json_encode($articulos);
-    $file = 'articulos.json';
-    file_put_contents($file, $json_string);
-
-    
-     
+      }
       
 
 
@@ -95,7 +95,7 @@ require "header.php";
                            <p class="card-text">Valor: <?php echo $articulos[$i]["valor"] ?></p>
                            <p class="card-text">calificacion: <?php echo $articulos[$i]["calificacion"] ?></p>
                            <p class="card-text">Clasificacion: <?php echo $articulos[$i]["clasificacion"] ?></p>
-                           <p class="card-text">Puntaje: <?php echo $articulos[$i]["puntaje"] ?></p>
+                           
                            <?php if ($_SESSION["log"]): ?>
                               <div class="text-right">
                                  <form class="form-inline" method="POST" action="editar.php">
