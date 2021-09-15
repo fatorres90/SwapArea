@@ -38,10 +38,10 @@
           
           <ul class="list-group">
             <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Shares</strong></span> 125</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Articulos</strong></span> 125</li>
             <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 13</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span> 37</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Intercambios</strong></span> 37</li>
+            
           </ul> 
                
           <div class="panel panel-default">
@@ -54,9 +54,9 @@
         </div><!--/col-3-->
     	<div class="col-sm-9">
             <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-                <li><a data-toggle="tab" href="#messages">Menu 1</a></li>
-                <li><a data-toggle="tab" href="#settings">Menu 2</a></li>
+                <li class="active"><a data-toggle="tab" href="#home">Datos personales</a></li>
+                <li><a data-toggle="tab" href="#messages">Direccion</a></li>
+                
               </ul>
 
               
@@ -67,14 +67,14 @@
                       <div class="form-group">
                           
                           <div class="col-xs-6">
-                              <label for="first_name"><h4>First name</h4></label>
+                              <label for="first_name"><h4>Nombres</h4></label>
                               <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
-                            <label for="last_name"><h4>Last name</h4></label>
+                            <label for="last_name"><h4>Apellidos</h4></label>
                               <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
                           </div>
                       </div>
@@ -82,14 +82,14 @@
                       <div class="form-group">
                           
                           <div class="col-xs-6">
-                              <label for="phone"><h4>Phone</h4></label>
-                              <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
+                              <label for="phone"><h4>Nombre Usuario</h4></label>
+                              <input type="text" class="form-control" name="phone" id="phone" placeholder="Nombre usuario" title="enter your phone number if any.">
                           </div>
                       </div>
           
                       <div class="form-group">
                           <div class="col-xs-6">
-                             <label for="mobile"><h4>Mobile</h4></label>
+                             <label for="mobile"><h4>telefono</h4></label>
                               <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
                           </div>
                       </div>
@@ -103,8 +103,8 @@
                       <div class="form-group">
                           
                           <div class="col-xs-6">
-                              <label for="email"><h4>Location</h4></label>
-                              <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">
+                              <label for="email"><h4>Edad</h4></label>
+                              <input type="email" class="form-control" id="location" placeholder="Edad" title="enter a location">
                           </div>
                       </div>
                       <div class="form-group">
@@ -142,59 +142,49 @@
                       <div class="form-group">
                           
                           <div class="col-xs-6">
-                              <label for="first_name"><h4>First name</h4></label>
-                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                              <label for="first_name"><h4>Calle</h4></label>
+                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Calle" title="enter your first name if any.">
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
-                            <label for="last_name"><h4>Last name</h4></label>
-                              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                            <label for="last_name"><h4>Altura</h4></label>
+                              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Altura" title="enter your last name if any.">
                           </div>
                       </div>
           
                       <div class="form-group">
                           
                           <div class="col-xs-6">
-                              <label for="phone"><h4>Phone</h4></label>
-                              <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
+                              <label for="phone"><h4>Ciudad</h4></label>
+                              <input type="text" class="form-control" name="phone" id="phone" placeholder="Ciudad" title="enter your phone number if any.">
                           </div>
                       </div>
           
                       <div class="form-group">
                           <div class="col-xs-6">
-                             <label for="mobile"><h4>Mobile</h4></label>
-                              <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
+                             <label for="mobile"><h4>Provincia</h4></label>
+                              <input type="text" class="form-control" name="mobile" id="mobile" placeholder="Provencia" title="enter your mobile number if any.">
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
-                              <label for="email"><h4>Email</h4></label>
-                              <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
+                              <label for="email"><h4>Pais</h4></label>
+                              <input type="email" class="form-control" name="email" id="email" placeholder="Pais" title="enter your email.">
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
-                              <label for="email"><h4>Location</h4></label>
-                              <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">
+                              <label for="email"><h4>DNI</h4></label>
+                              <input type="email" class="form-control" id="location" placeholder="DNI" title="enter a location">
                           </div>
                       </div>
                       <div class="form-group">
                           
-                          <div class="col-xs-6">
-                              <label for="password"><h4>Password</h4></label>
-                              <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
-                          </div>
-                      </div>
-                      <div class="form-group">
                           
-                          <div class="col-xs-6">
-                            <label for="password2"><h4>Verify</h4></label>
-                              <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
-                          </div>
                       </div>
                       <div class="form-group">
                            <div class="col-xs-12">
